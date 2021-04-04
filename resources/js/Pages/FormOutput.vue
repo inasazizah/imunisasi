@@ -17,7 +17,7 @@
                             </div>
                             <div class="my-1">
                                 <p class="text-xs font-semibold">Tanggal Lahir</p>
-                                <p>{{ baby.ttl }}</p>
+                                <p>{{ formatDate(baby.ttl) }}</p>
                             </div>
                             <div class="my-1">
                                 <p class="text-xs font-semibold">Usia</p>
@@ -34,12 +34,12 @@
                                         <th class="px-2 py-3"></th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr v-for="(riwayat, index) in riwayats" :key="riwayat.id">
+                                <tbody class="divide-y text-sm">
+                                    <tr v-for="(riwayat, index) in scheduled" :key="riwayat.id">
                                         <td class="px-2 py-1 text-center">{{ index+1 }}</td>
                                         <td class="px-2 py-1">{{ riwayat.imunisasi.jenis }}</td>
-                                        <td class="px-2 py-1 text-center">{{ riwayat.tgl_penjadwalan }}</td>
-                                        <td class="px-2 py-1 text-center"><a href="#" class="text-blue-800 underline">Lihat Lebih Lanjut</a></td>
+                                        <td class="px-2 py-1 text-center">{{ formatDate(riwayat.tgl_penjadwalan) }}</td>
+                                        <td class="px-2 py-1 text-center"><inertia-link :href="route('detail', {id: riwayat.imunisasi_id})" class="text-blue-800 underline">Lihat Lebih Lanjut</inertia-link></td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -55,6 +55,8 @@
     import AppLayout from '@/Layouts/AppLayout'
     import Welcome from '@/Jetstream/Welcome'
     import JetButton from '@/Jetstream/Button'
+    import { format, differenceInMonths } from 'date-fns'
+    import { id } from 'date-fns/locale'
 
     export default {
         components: {
@@ -65,11 +67,31 @@
         props: ['baby', 'riwayats'],
         computed: {
             displayAge() {
-                const timeDifference = new Date() - new Date(this.baby.ttl)
-                const monthDifference = Math.floor(timeDifference / (2e3 * 3600 * 365.25))
-                return monthDifference ? monthDifference +' Bulan' : '0 Bulan'
-            }
-        }
+                if (!this.baby.ttl) {
+                    return 'Masukkan tanggal lahir bayi terlebih dahulu'
+                }
+
+                const age = differenceInMonths(new Date(), new Date(this.baby.ttl))
+                if (age < 0) {
+                   return 'Tanggal lahir bayi yang dimasukkan salah' 
+                }
+            
+                return age + ' Bulan'
+            },
+            scheduled() {
+                return this.riwayats
+                    .filter(riwayat => !!riwayat.tgl_penjadwalan)
+                    .sort((a, b) => new Date(a.tgl_penjadwalan) - new Date(b.tgl_penjadwalan))
+            },
+        },
+        methods: {
+            formatDate(date) {
+                const tgl = new Date(date)
+                return format(tgl, "d MMMM yyyy", {
+                        locale: id
+                    })
+            } 
+        },
     }
 </script>
 

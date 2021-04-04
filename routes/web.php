@@ -32,3 +32,4 @@ Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 Route::get('/form', 'BabyController@create')->name('form');
 Route::post('/form', 'BabyController@store')->name('form.store');
 Route::get('/hasil', 'BabyController@show')->name('form.show');
+Route::get('/detail/{id}', 'ImunisasiController@detail')->name('detail');
