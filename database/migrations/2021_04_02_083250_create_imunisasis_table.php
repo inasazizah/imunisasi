@@ -16,12 +16,12 @@ class CreateImunisasisTable extends Migration
         Schema::create('imunisasis', function (Blueprint $table) {
             $table->id();
             $table->string('jenis');
-            $table->string('deskripsi')->nullable();
-            $table->string('cara_pemberian_dosis')->nullable();
-            $table->string('indikasi')->nullable();
-            $table->string('indikasi_kontra')->nullable();
-            $table->string('efek_samping')->nullable();
-            $table->string('penanganan_efek_samping')->nullable();
+            $table->text('deskripsi')->nullable();
+            $table->text('cara_pemberian_dosis')->nullable();
+            $table->text('indikasi')->nullable();
+            $table->text('indikasi_kontra')->nullable();
+            $table->text('efek_samping')->nullable();
+            $table->text('penanganan_efek_samping')->nullable();
             $table->timestamps();
         });
     }
