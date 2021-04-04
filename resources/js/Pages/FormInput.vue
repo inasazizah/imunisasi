@@ -123,7 +123,13 @@
                 if (!this.form.ttl) {
                     return 'Masukkan tanggal lahir bayi terlebih dahulu'
                 }
-                return differenceInMonths(new Date(), new Date(this.form.ttl))
+
+                const age = differenceInMonths(new Date(), new Date(this.form.ttl))
+                if (age < 0) {
+                   return 'Tanggal lahir bayi yang dimasukkan salah' 
+                }
+            
+                return age + ' Bulan'
             }
         }
     }
