@@ -18,10 +18,6 @@ class CreateBabiesTable extends Migration
             $table->string('nama');
             $table->date('ttl');
             $table->integer('bb');
-            $table->text('done');
-            $table->date('last_polio')->nullable();
-            $table->date('last_dpt')->nullable();
-            $table->date('last_mr')->nullable();
             $table->unsignedBigInteger('user_id');
             $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();

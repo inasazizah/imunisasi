@@ -25,8 +25,8 @@ class BabyController extends Controller
             'ttl' => ['required', 'max:50'],
             'bb' => ['required', 'max:50'],
         ])->validate();
-  
-        $baby= Baby::create($request->all()); // ambil id baby
+
+        $baby= Baby::create($request->only(['nama','ttl','bb','user_id'])); // ambil id baby
 
         // menyimpan data riwayat (belum + sudah)   
 
@@ -41,7 +41,7 @@ class BabyController extends Controller
             ]);
         }
 
-        BabyController::rules($baby->id, $baby->ttl, $baby->bb, $baby->done, $baby->last_polio, $baby->last_dpt, $baby->last_mr);
+        BabyController::rules($baby->id, $baby->ttl, $baby->bb, $request->done, $request->last_polio, $request->last_dpt, $request->last_mr);
 
         // update status riwayat
 
@@ -64,7 +64,7 @@ class BabyController extends Controller
 
     public function rules($baby_id, $ttl, $bb, $done, $last_polio, $last_dpt, $last_mr)
     {
-        $im = ["HB0", "BCG", "Polio 1", "DPT-HB-Hib 1", "Polio 2", "DPT-HB-Hib 2", "Polio 3", "DPT-HB-Hib 3", "Polio 4", "MR", "DPT-HB-Hib Lanjutan", "MR Lanjutan"];
+        $im = ["1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"];
 
         //interval antar imunisasi
         $interval = new DateInterval('P1M');
@@ -90,6 +90,7 @@ class BabyController extends Controller
             return count(array_intersect($search_this, $all)) == count($search_this);
         }
 
+        // update tanggal penjadwalan riwayat
         //berat badan tidak mencukupi
         if ($bb < 2) {
             echo "Tidak imunisasi karena berat badan tidak sampai 2 kg";
@@ -425,6 +426,105 @@ class BabyController extends Controller
                     $riwayat->save();
                 }
             }
-        }   
+        }
+
+        // update status riwayat
+        //HB0
+        if (in_array($im[0], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 1)->first();
+            $riwayat->status = 'Sudah';
+            $riwayat->save();
+        } 
+        //BCG
+        if (in_array($im[1], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 2)->first();
+            $riwayat->status = 'Sudah';
+            $riwayat->save();
+        }
+        //Polio 1
+        if (in_array($im[2], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 3)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[4], $done)){
+                $riwayat->tgl_diberikan = $last_polio;
+            }
+            $riwayat->save();
+        }
+        //DPT 1
+        if (in_array($im[3], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 4)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[5], $done)){
+                $riwayat->tgl_diberikan = $last_dpt;
+            }
+            $riwayat->save();
+        }
+        //Polio 2
+        if (in_array($im[4], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 5)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[6], $done)){
+                $riwayat->tgl_diberikan = $last_polio;
+            }
+            $riwayat->save();
+        }
+        //DPT 2
+        if (in_array($im[5], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 6)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[7], $done)){
+                $riwayat->tgl_diberikan = $last_dpt;
+            }
+            $riwayat->save();
+        }
+        //Polio 3
+        if (in_array($im[6], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 7)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[8], $done)){
+                $riwayat->tgl_diberikan = $last_polio;
+            }
+            $riwayat->save();
+        }
+        //DPT 3
+        if (in_array($im[7], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 8)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[10], $done)){
+                $riwayat->tgl_diberikan = $last_dpt;
+            }
+            $riwayat->save();
+        }
+        //Polio 4
+        if (in_array($im[8], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 9)->first();
+            $riwayat->tgl_diberikan = $last_polio;
+            $riwayat->status = 'Sudah';
+            $riwayat->save();
+        }
+        //MR
+        if (in_array($im[9], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 10)->first();
+            $riwayat->status = 'Sudah';
+            if(!in_array($im[11], $done)){
+                $riwayat->tgl_diberikan = $last_mr;
+            }
+            $riwayat->save();
+        }
+        // DPT Lanjutan
+        if (in_array($im[10], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 11)->first();
+            $riwayat->tgl_diberikan = $last_dpt;
+            $riwayat->status = 'Sudah';
+            $riwayat->save();
+        }
+        //MR Lanjutan
+        if (in_array($im[11], $done)) {
+            $riwayat = Riwayat::where('baby_id', $baby_id)->where('imunisasi_id', 12)->first();
+           // $riwayat->tgl_diberikan = $last_mr;
+            $riwayat->status = 'Sudah';
+            $riwayat->save();
+        }
+
     }
 }

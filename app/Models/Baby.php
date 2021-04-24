@@ -15,10 +15,6 @@ class Baby extends Model
         'nama',
         'ttl',
         'bb',
-        'done',
-        'last_polio',
-        'last_dpt',
-        'last_mr',
         'user_id',
     ];
 }

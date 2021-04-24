@@ -34,29 +34,29 @@
                             <h1 class="font-semibold text-indigo-500 text-xl text-semibold">Riwayat Imunisasi</h1>
                             <div class="my-5 text-sm">
                                 <label>Imunisasi yang telah diberikan</label><br>
-                                <input v-model="form.done" type='checkbox' id='done1' value='HB0'>
+                                <input v-model="form.done" type='checkbox' id='done1' value='1'>
                                 <label class="ml-3" for="done1">HB0</label><br>
-                                <input v-model="form.done" type='checkbox' id='done2' value='BCG'>
+                                <input v-model="form.done" type='checkbox' id='done2' value='2'>
                                 <label class="ml-3" for="done2">BCG</label><br>
-                                <input v-model="form.done" type='checkbox' id='done3' value='Polio 1'>
+                                <input v-model="form.done" type='checkbox' id='done3' value='3'>
                                 <label class="ml-3" for="done3">Polio 1</label><br>
-                                <input v-model="form.done" type='checkbox' id='done4' value='DPT-HB-Hib 1'>
+                                <input v-model="form.done" type='checkbox' id='done4' value='4'>
                                 <label class="ml-3" for="done4">DPT-HB-Hib 1</label><br>
-                                <input v-model="form.done" type='checkbox' id='done5' value='Polio 2'>
+                                <input v-model="form.done" type='checkbox' id='done5' value='5'>
                                 <label class="ml-3" for="done5">Polio 2</label><br>
-                                <input v-model="form.done" type='checkbox' id='done6' value='DPT-HB-Hib 2'>
+                                <input v-model="form.done" type='checkbox' id='done6' value='6'>
                                 <label class="ml-3" for="done6">DPT-HB-Hib 2</label><br>
-                                <input v-model="form.done" type='checkbox' id='done7' value='Polio 3'>
+                                <input v-model="form.done" type='checkbox' id='done7' value='7'>
                                 <label class="ml-3" for="done7">Polio 3</label><br>
-                                <input v-model="form.done" type='checkbox' id='done8' value='DPT-HB-Hib 3'>
+                                <input v-model="form.done" type='checkbox' id='done8' value='8'>
                                 <label class="ml-3" for="done8">DPT-HB-Hib 3</label><br>
-                                <input v-model="form.done" type='checkbox' id='done9' value='Polio 4'>
+                                <input v-model="form.done" type='checkbox' id='done9' value='9'>
                                 <label class="ml-3" for="done9">Polio 4</label><br>
-                                <input v-model="form.done" type='checkbox' id='done10' value='MR'>
+                                <input v-model="form.done" type='checkbox' id='done10' value='10'>
                                 <label class="ml-3" for="done10">MR</label><br>
-                                <input v-model="form.done" type='checkbox' id='done11' value='DPT-HB-Hib Lanjutan'>
+                                <input v-model="form.done" type='checkbox' id='done11' value='11'>
                                 <label class="ml-3" for="done11">DPT-HB-Hib Lanjutan</label><br>
-                                <input v-model="form.done" type='checkbox' id='done11' value='MR Lanjutan'>
+                                <input v-model="form.done" type='checkbox' id='done11' value='12'>
                                 <label class="ml-3" for="done11">MR Lanjutan</label><br>
                             </div>
                                 <div class="my-5 text-sm">

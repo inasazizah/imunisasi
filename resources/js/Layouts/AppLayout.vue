@@ -26,6 +26,10 @@
                                 <jet-nav-link :href="route('form.show')" :active="route().current('form.show')">
                                     Jadwal Selanjutnya
                                 </jet-nav-link>
+                                <jet-nav-link :href="route('riwayat')" :active="route().current('riwayat')">
+                                    Riwayat Imunisasi
+                                </jet-nav-link>
+                            
                             </div>
                         </div>
 
@@ -155,7 +159,9 @@
                         <jet-responsive-nav-link :href="route('form.show')" :active="route().current('form.show')">
                             Jadwal Selanjutnya
                         </jet-responsive-nav-link>
-                        
+                        <jet-responsive-nav-link :href="route('riwayat')" :active="route().current('riwayat')">
+                            Riwayat Imunisasi
+                        </jet-responsive-nav-link>
                     </div>
 
                     <!-- Responsive Settings Options -->
