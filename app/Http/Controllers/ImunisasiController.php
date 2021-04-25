@@ -17,4 +17,10 @@ class ImunisasiController extends Controller
             'imunisasi' => $imunisasi,
         ]);
     }
+    public function info(){
+        $imunisasis = Imunisasi::all();
+        return Inertia::render('InfoImunisasi', [
+            'imunisasis' => $imunisasis,
+        ]);
+    }
 }

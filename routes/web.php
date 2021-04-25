@@ -35,3 +35,4 @@ Route::get('/hasil', 'BabyController@show')->name('form.show');
 Route::get('/riwayat', 'RiwayatController@index')->name('riwayat');
 Route::put('/riwayat','RiwayatController@update')->name('riwayat.update');
 Route::get('/detail/{id}', 'ImunisasiController@detail')->name('detail');
+Route::get('/info', 'ImunisasiController@info')->name('info');

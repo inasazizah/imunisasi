@@ -16,6 +16,12 @@ use DateInterval;
 class BabyController extends Controller
 {
     public function create() {
+        $id = Auth::user()->id;
+        $is_filled = !empty(Baby::where('user_id', $id)->first());
+        
+        if($is_filled){
+            return redirect()->route('riwayat');
+        }
         return Inertia::render('FormInput');
     }
 

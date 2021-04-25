@@ -17,10 +17,9 @@ class ImunisasiSeeder extends Seeder
         $imunisasis = [
             [
                'jenis'=>'HB0',
-               'deskripsi'=>'Vaksin ini merupakan vaksin Hepatitis B yang bertujuan untuk mencegah penularan peyakit infeksi atau 
-                            kerusakan hati kronis yang disebabkan oleh virus Hepatitis B',
-                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 dosis. Dosis pertama ketika bayi baru lahir, dosis berikutnya diberikan 
-                                        interval minimum 4 minggu',
+               'deskripsi'=>'Vaksin HB0 merupakan vaksin Hepatitis B yang diberikan pertama kali segera setelah lahir. Vaksin ini merupakan vaksin yang bertujuan untuk mencegah penularan peyakit infeksi atau 
+                            kerusakan hati kronis yang disebabkan oleh virus Hepatitis B.',
+                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 dosis, yaitu pada usia 0, 1, dan 6 bulan dengan interval atau jarak antar imunisasi minimum 4 minggu',
                 'indikasi'=>'Semua bayi yang baru lahir, anak yang belum pernah mendapat imunisasi hepatitis B, 
                             pasien hemodialisis, individu yang memiliki keluarga dengan riwayat hepatitis B',
                 'indikasi_kontra'=>'Penderita infeksi berat yang disertai kejang',
@@ -32,8 +31,8 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'BCG',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah penularan penyakit TBC atau Tuberkulosis yang berat',
-                'cara_pemberian_dosis'=>'Diberikan sebanyak 1 kali dengan disuntikkan di daerah lengan atas',
+                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah penularan penyakit TBC atau Tuberkulosis yang berat. Vaksin BCG dibuat dari bakteri Mycobacterium bovis yang sudah dilemahkan.',
+                'cara_pemberian_dosis'=>'Diberikan sebanyak 1 kali dengan disuntikkan di daerah lengan atas antara 0-2 bulan, paling optimal saat usia 2 bulan',
                 'indikasi'=>'Bayi berusia kurang dari 3 bulan yang belum mendapatkan imunisasi BCG, bayi dengan hasil tes tuberkulin 
                             negatif, bayi yang memiliki kontak erat dengan penderita TB',
                 'indikasi_kontra'=>'Kondisi dengan gangguan imunitas, demam tinggi, infeksi kulit luas, riwayat infeksi HB, hamil',
@@ -45,9 +44,9 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'Polio 1',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
+                'deskripsi'=>'Vaksin Polio 1 merupakan vaksin polio yang diberikan pertama kali (dosis pertama). Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
                             dan atau lengan',
-                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interal
+                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interval
                                         tiap dosis minimal 4 minggu',
                 'indikasi'=>'Anak yang belum pernah mendapatkan imunisasi polio',
                 'indikasi_kontra'=>'Kondisi dengan gangguan imunitas, sedang menderita demam, penyakit akut atau penyakit kronis progresif,
@@ -60,8 +59,8 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'DPT-HB-Hib 1',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
-                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali serta 1 kali sebagai lanjutan (booster), disuntikkan pada paha atas',
+                'deskripsi'=>'Vaksin DPT-HB-Hib 1 merupakan vaksin yang diberikan pertama kali (dosis pertama). Vaksin DPT-HB-Hib 1 merupakan vaksin yang diberikan pertama kali (dosis pertama). Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
+                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali sebagai imunisasi wajib (usia 2,4,6 bulan) serta 1 kali sebagai lanjutan atau booster (usia 18-24 bulan). Disuntikkan pada paha atas',
                 'indikasi'=>'Semua anak yang belum diberi vaksin DPT-HB-Hib minimal usia 6 minggu, terpapar dengan individu terinfeksi difteri dan 
                             pertusis, terdapat luka terbuka yang kotor',
                 'indikasi_kontra'=>'Kejang atau gejala kelainan otak pada bayi baru lahir atau kelainan saraf serius, riwayat alergi berat pada pemberian vaksin DPT',
@@ -73,10 +72,9 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'Polio 2',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
+                'deskripsi'=>'Vaksin Polio 2 merupakan vaksin polio yang diberikan kedua kali setelah vaksin Polio 1. Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
                             dan atau lengan',
-                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interal
-                                        tiap dosis minimal 4 minggu',
+                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interval tiap dosis minimal 4 minggu',
                 'indikasi'=>'Anak yang belum pernah mendapatkan imunisasi polio',
                 'indikasi_kontra'=>'Kondisi dengan gangguan imunitas, sedang menderita demam, penyakit akut atau penyakit kronis progresif,
                                     Hipersensitif pada saat pemberian vaksin ini sebelumnya, penyakit demam akibat infeksi akut: tunggu sampai sembuh,
@@ -88,8 +86,8 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'DPT-HB-Hib 2',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
-                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali serta 1 kali sebagai lanjutan (booster), disuntikkan pada paha atas',
+                'deskripsi'=>'Vaksin DPT-HB-Hib 2 merupakan vaksin yang diberikan kedua kali setelah vaksin DPT-HB-Hib 1. Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
+                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali sebagai imunisasi wajib (usia 2,4,6 bulan) serta 1 kali sebagai lanjutan atau booster (usia 18-24 bulan). Disuntikkan pada paha atas',
                 'indikasi'=>'Semua anak yang belum diberi vaksin DPT-HB-Hib minimal usia 6 minggu, terpapar dengan individu terinfeksi difteri dan 
                             pertusis, terdapat luka terbuka yang kotor',
                 'indikasi_kontra'=>'Kejang atau gejala kelainan otak pada bayi baru lahir atau kelainan saraf serius, riwayat alergi berat pada pemberian vaksin DPT',
@@ -101,10 +99,9 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'Polio 3',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
+                'deskripsi'=>'Vaksin Polio 3 merupakan vaksin polio yang diberikan ketiga kali setelah vaksin Polio 1 dan 2. Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
                             dan atau lengan',
-                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interal
-                                        tiap dosis minimal 4 minggu',
+                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interval tiap dosis minimal 4 minggu',
                 'indikasi'=>'Anak yang belum pernah mendapatkan imunisasi polio',
                 'indikasi_kontra'=>'Kondisi dengan gangguan imunitas, sedang menderita demam, penyakit akut atau penyakit kronis progresif,
                                     Hipersensitif pada saat pemberian vaksin ini sebelumnya, penyakit demam akibat infeksi akut: tunggu sampai sembuh,
@@ -116,8 +113,8 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'DPT-HB-Hib 3',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
-                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali serta 1 kali sebagai lanjutan (booster), disuntikkan pada paha atas',
+                'deskripsi'=>'Vaksin DPT-HB-Hib 3 merupakan vaksin yang diberikan ketiga kali setelah vaksin DPT-HB-Hib 1 dan 2. Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
+                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali sebagai imunisasi wajib (usia 2,4,6 bulan) serta 1 kali sebagai lanjutan atau booster (usia 18-24 bulan). Disuntikkan pada paha atas',
                 'indikasi'=>'Semua anak yang belum diberi vaksin DPT-HB-Hib minimal usia 6 minggu, terpapar dengan individu terinfeksi difteri dan 
                             pertusis, terdapat luka terbuka yang kotor',
                 'indikasi_kontra'=>'Kejang atau gejala kelainan otak pada bayi baru lahir atau kelainan saraf serius, riwayat alergi berat pada pemberian vaksin DPT',
@@ -129,10 +126,9 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'Polio 4',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
+                'deskripsi'=>'Vaksin Polio 4 merupakan vaksin polio yang diberikan keempat kali setelah vaksin Polio 1, 2, dan 3. Vaksin ini merupakan vaksin yang dapat mencegah penyakit polio yang dapat menyebabkan lumpuh layu pada tungkai
                             dan atau lengan',
-                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interal
-                                        tiap dosis minimal 4 minggu',
+                'cara_pemberian_dosis'=>'Dapat diberikan secara oral (OPV) dan suntikan (IPV), dari sebanyak 4 kali (dosis) dengan interval tiap dosis minimal 4 minggu',
                 'indikasi'=>'Anak yang belum pernah mendapatkan imunisasi polio',
                 'indikasi_kontra'=>'Kondisi dengan gangguan imunitas, sedang menderita demam, penyakit akut atau penyakit kronis progresif,
                                     Hipersensitif pada saat pemberian vaksin ini sebelumnya, penyakit demam akibat infeksi akut: tunggu sampai sembuh,
@@ -156,8 +152,8 @@ class ImunisasiSeeder extends Seeder
             ],
             [
                 'jenis'=>'DPT-HB-Hib Lanjutan',
-                'deskripsi'=>'Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
-                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali serta 1 kali sebagai lanjutan (booster), disuntikkan pada paha atas',
+                'deskripsi'=>'Vaksin DPT-HB-Hib Lanjutan merupakan vaksin yang diberikan keempat kali setelah vaksin DPT-HB-Hib 1, 2, dan 3. Vaksin ini merupakan vaksin yang dapat mencegah terhadap penyakit difteri, tetanus, pertusis (batuk rejan), hepatitis B, dan infeksi Haemophilus influenzae tipe b secara simultan',
+                'cara_pemberian_dosis'=>'Diberikan sebanyak 3 kali sebagai imunisasi wajib (usia 2,4,6 bulan) serta 1 kali sebagai lanjutan atau booster (usia 18-24 bulan). Disuntikkan pada paha atas',
                 'indikasi'=>'Semua anak yang belum diberi vaksin DPT-HB-Hib minimal usia 6 minggu, terpapar dengan individu terinfeksi difteri dan 
                             pertusis, terdapat luka terbuka yang kotor',
                 'indikasi_kontra'=>'Kejang atau gejala kelainan otak pada bayi baru lahir atau kelainan saraf serius, riwayat alergi berat pada pemberian vaksin DPT',

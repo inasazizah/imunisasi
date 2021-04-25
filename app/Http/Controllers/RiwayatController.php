@@ -14,8 +14,13 @@ class RiwayatController extends Controller
 {
     public function index() {
         $id = Auth::user()->id;
-        $baby = Baby::where('user_id', $id)->first();
+        $is_not_filled = empty(Baby::where('user_id', $id)->first());
 
+        if ($is_not_filled) {
+            return redirect()->route('form');
+        }
+
+        $baby = Baby::where('user_id', $id)->first();
         $riwayats = Riwayat::where('baby_id', $baby->id)->with('imunisasi')->get();
 
         return Inertia::render('Riwayat', [

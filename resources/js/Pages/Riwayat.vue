@@ -31,8 +31,8 @@
                                         <th class="px-3 py-3">No</th>
                                         <th class="px-2 py-3">Jenis Imunisasi</th>
                                         <th class="px-2 py-3">Tanggal Penjadwalan</th>
-                                        <th class="px-2 py-3">Tanggal Pemberian</th>
                                         <th class="px-2 py-3">Status</th>
+                                        <th class="px-2 py-3">Tanggal Pemberian</th>
                                         <th class="px-2 py-3"></th>
                                     </tr>
                                 </thead>
@@ -41,13 +41,14 @@
                                         <td class="px-2 py-1 text-center">{{ index+1 }}</td>
                                         <td class="px-2 py-1">{{ riwayat.imunisasi.jenis }}</td>
                                         <td class="px-2 py-1 text-center">{{ formatDate(riwayat.tgl_penjadwalan) }}</td>
-                                        <td class="px-2 py-1 text-center">{{ formatDate(riwayat.tgl_diberikan) }}</td>
                                         <td class="px-2 py-1 text-center">{{ riwayat.status || 'Belum' }}</td>
+                                        <td class="px-2 py-1 text-center">{{ formatDate(riwayat.tgl_diberikan) }}</td>
                                         <td class="px-2 py-1 text-center">
                                             <button v-if="riwayat.status != 'Sudah'" @click="edit(riwayat)" class="bg-indigo-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" >
                                                  Update
                                             </button>
                                         </td>
+                                        <td class="px-2 py-1 text-center"><inertia-link :href="route('detail', {id: riwayat.imunisasi_id})" class="text-blue-800 underline">Lihat Lebih Lanjut</inertia-link></td>
                                     </tr>
                                 </tbody>
                             </table>

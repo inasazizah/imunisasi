@@ -113,6 +113,10 @@
         },
          methods: {
             submit() {
+                if (this.form.bb <= 2) {
+                    alert("Bayi tidak dapat melaksanakan imunisasi karena berat badan bayi tidak lebih dari 2 kg. Mohon isi kembali ketika berat badan bayi sudah mencukupi.")
+                    return
+                }
                 const data = {...this.form}
                 data.done = JSON.stringify(this.form.done)
                 this.$inertia.post(this.route('form.store'), data)

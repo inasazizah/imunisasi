@@ -23,11 +23,11 @@
                                 <jet-nav-link :href="route('form')" :active="route().current('form')">
                                     Atur Jadwal
                                 </jet-nav-link>
-                                <jet-nav-link :href="route('form.show')" :active="route().current('form.show')">
-                                    Jadwal Selanjutnya
-                                </jet-nav-link>
                                 <jet-nav-link :href="route('riwayat')" :active="route().current('riwayat')">
                                     Riwayat Imunisasi
+                                </jet-nav-link>
+                                <jet-nav-link :href="route('info')" :active="route().current('info')">
+                                    Detail Imunisasi
                                 </jet-nav-link>
                             
                             </div>
@@ -156,11 +156,11 @@
                         <jet-responsive-nav-link :href="route('form')" :active="route().current('form')">
                             Atur Jadwal
                         </jet-responsive-nav-link>
-                        <jet-responsive-nav-link :href="route('form.show')" :active="route().current('form.show')">
-                            Jadwal Selanjutnya
-                        </jet-responsive-nav-link>
                         <jet-responsive-nav-link :href="route('riwayat')" :active="route().current('riwayat')">
                             Riwayat Imunisasi
+                        </jet-responsive-nav-link>
+                        <jet-responsive-nav-link :href="route('info')" :active="route().current('info')">
+                            Detail Imunisasi
                         </jet-responsive-nav-link>
                     </div>
 
